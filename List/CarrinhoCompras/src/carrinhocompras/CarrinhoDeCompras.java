@@ -39,8 +39,12 @@ public class CarrinhoDeCompras {
   }
 
   public void exibirItens() {
-    // TODO: implementar esse método 
     // Exibe todos os itens presentes no carrinho, mostrando seus nomes, preços e quantidades.
+    if (!itemList.isEmpty()) {
+      System.out.println(itemList);
+    } else {
+      System.out.println("A lista está vazia!");
+    }
   }
 
 }
