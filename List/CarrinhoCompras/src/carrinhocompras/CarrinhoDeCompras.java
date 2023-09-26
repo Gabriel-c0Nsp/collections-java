@@ -1,4 +1,4 @@
-package carrinhocompras;
+  package carrinhocompras;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +13,7 @@ public class CarrinhoDeCompras {
  
   public void adicionarItem(String nome, double preco, int quantidade) {
     // Adiciona um item ao carrinho com o nome, preço e quantidade especificados.
-    itemList.add(new itemList(nome, preco, quantidade));
+    itemList.add(new Item(nome, preco, quantidade));
   }
 
   public void removerItem(String nome) {
@@ -22,7 +22,7 @@ public class CarrinhoDeCompras {
 
     if (!itemList.isEmpty()) {
       for (Item item : itemList) {
-        if (item.getNome().equalsIgnoreCase(nome) && item.getPreco().equalsIgnoreCase(preco) && item.getQuantidade().equalsIgnoreCase(quantidade)) {
+        if (item.getNome().equalsIgnoreCase(nome)) {
           itensParaRemover.add(item);
         }
       }
@@ -33,9 +33,13 @@ public class CarrinhoDeCompras {
   }
 
   public double calcularValorTotal() {
-    // TODO: implementar esse método
     // Calcula e retorna o valor total do carrinho, levando em consideração o preço e a quantidade de cada item.
-    return 0;
+    double valorTotal = 0;
+
+    for (Item item : itemList) {
+      valorTotal += item.getPreco() * item.getQuantidade();
+    } 
+    return valorTotal;
   }
 
   public void exibirItens() {
