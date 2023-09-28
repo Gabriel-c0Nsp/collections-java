@@ -35,6 +35,54 @@ public class ListaTarefas {
     return tarefasSet.size();
   } 
 
+  public Set<Tarefa> obterTarefasConcluidas() {
+    Set<Tarefa> tarefasConcluidas = new HashSet<>();
 
+    for (Tarefa tarefa : tarefasSet) {
+      if (tarefa.getStatus() == true) {
+        tarefasConcluidas.add(tarefa);
+      }
+    }
+    return tarefasConcluidas;
+  }
+
+  public Set<Tarefa> obterTarefasPendentes() {
+    Set<Tarefa> tarefasPendentes = new HashSet<>();
+
+    for (Tarefa tarefa : tarefasSet) {
+      if (tarefa.getStatus() == false) {
+        tarefasPendentes.add(tarefa);
+      }
+    }
+    return tarefasPendentes;
+  }
+
+  public void marcarTarefaConcluida(String descricao) {
+    for (Tarefa tarefa : tarefasSet) {
+      if (tarefa.getDescricao().equalsIgnoreCase(descricao)) {
+        if (tarefa.getStatus() == true) {
+          break;
+        } else {
+          tarefa.setStatus(true);
+        } 
+      }
+    }
+  }
+
+  public void marcarTarefaPendente(String descricao) {
+    for (Tarefa tarefa : tarefasSet) {
+      if (tarefa.getDescricao().equalsIgnoreCase(descricao)) {
+        if (tarefa.getStatus() == false) {
+          break;
+        } else {
+          tarefa.setStatus(false);
+        } 
+      }
+    }
+  }
+
+  public void limparListaTarefas() {
+    tarefasSet.clear();
+  }
 
 }
