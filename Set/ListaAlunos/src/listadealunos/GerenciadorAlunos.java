@@ -28,13 +28,14 @@ public class GerenciadorAlunos {
   }
 
   public Set<Aluno> exibirAlunosPorNome() {
-    // TODO: 
-    return 0;
+    Set<Aluno> alunosPorNome = new TreeSet<>(alunoSet); 
+    return alunosPorNome;
   }
 
   public Set<Aluno> exibirAlunosPorNota() {
-    // TODO: 
-    return 0;
+    Set<Aluno> alunosPorNota = new TreeSet<>(new ComparatorNota());
+    alunosPorNota.addAll(alunoSet);
+    return alunosPorNota;
   }
 
   public void exibirAlunos() {
