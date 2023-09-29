@@ -3,7 +3,7 @@ package listadealunos;
 import java.util.Objects;
 import java.util.Comparator;
 
-public class Aluno {
+public class Aluno implements Comparable<Aluno>{
   
   private String nome;
   private long matricula;
@@ -28,6 +28,11 @@ public class Aluno {
   }
 
   @Override
+  public int compareTo(Aluno aluno) {
+    return nome.compareTo(aluno.getNome());
+  }
+
+  @Override
   public boolean equals(Object o) {
     if (this == o) return true;
     if (!(o instanceof Aluno aluno)) return false;
@@ -48,12 +53,13 @@ public class Aluno {
       '}';
   }
 
-  class ComparatorNota implements Comparator<Aluno> {
+  public class ComparatorNota implements Comparator<Aluno> {
 
     @Override
     public int compare(Aluno aluno1, Aluno aluno2) {
-      return Double.compare(aluno1.getMedia(), aluno2.getMedia());
+      return Double.compare(aluno1.getmedia(), aluno2.getmedia());
     }
+
   }
 
 }
