@@ -11,8 +11,8 @@ public class ListaTarefas {
     this.tarefasSet = new HashSet<>();
   }
 
-  public void adicionarTarefa(String descricao) {
-    tarefasSet.add(new Tarefa(descricao));
+  public void adicionarTarefa(String descricao, boolean status) {
+    tarefasSet.add(new Tarefa(descricao, status));
   }
 
   public void removerTarefa(String descricao) {
