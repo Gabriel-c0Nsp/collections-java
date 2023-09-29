@@ -33,18 +33,12 @@ public class GerenciadorAlunos {
     return alunosPorNome;
   }
 
-  // public Set<Aluno> exibirAlunosPorNota() {
-  //   Set<Aluno> alunosPorNota = new TreeSet<>(new ComparatorNota());
-  //   alunosPorNota.addAll(alunoSet);
-  //   return alunosPorNota;
-  // } -- Por algum motivo isso não funciona em nenhum dos exemplos...
-
   public Set<Aluno> exibirAlunosPorNota() {
     Set<Aluno> alunosPorNota = new TreeSet<>(new ComparatorNota());
     alunosPorNota.addAll(alunoSet);
     return alunosPorNota;
   } 
-  
+
   public void exibirAlunos() {
     System.out.println(alunoSet);
   }

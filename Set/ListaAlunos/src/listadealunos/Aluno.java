@@ -53,13 +53,13 @@ public class Aluno implements Comparable<Aluno>{
       '}';
   }
 
-  public class ComparatorNota implements Comparator<Aluno> {
 
-    @Override
-    public int compare(Aluno aluno1, Aluno aluno2) {
-      return Double.compare(aluno1.getmedia(), aluno2.getmedia());
-    }
+}
+class ComparatorNota implements Comparator<Aluno> {
 
+  @Override
+  public int compare(Aluno aluno1, Aluno aluno2) {
+    return Double.compare(aluno1.getmedia(), aluno2.getmedia());
   }
 
 }
